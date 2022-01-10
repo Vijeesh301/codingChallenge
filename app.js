@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 app.use (bodyParser.urlencoded({extended:true}));
 app.use (bodyParser.json());
 
-app.get ('/', (req, res) => {
+app.get ('/home', (req, res) => {
     res.sendFile (__dirname + '/index.html');
 })
 
@@ -48,7 +48,7 @@ app.post ('/emailsent', async (req, res) => {
 
     }
     catch (error) {
-        console.log ('Something went wrong...');
+        console.log ('Something went wrong...', (error));
     }
 });
 

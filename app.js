@@ -12,11 +12,11 @@ const port = process.env.PORT || 3000;
 app.use (bodyParser.urlencoded({extended:true}));
 app.use (bodyParser.json());
 
-app.get ('/', (req, res) => {
+app.get ('/home', (req, res) => {
     res.sendFile (__dirname + '/index.html');
 })
 
-app.post ('/emailsent', async (req, res) => {
+app.post ('/', async (req, res) => {
     try {
         const data = req.body.email;
         console.log(data);

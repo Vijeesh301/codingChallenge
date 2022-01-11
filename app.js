@@ -19,7 +19,7 @@ app.get ('/', (req, res) => {
 app.post ('/emailsent', async (req, res) => {
     try {
         const data = req.body.email;
-        console.log(data);
+        // console.log(data);
 
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -39,7 +39,7 @@ app.post ('/emailsent', async (req, res) => {
         transporter.sendMail (mailOption, (error, data) => {
             if (error) {
                 console.log (error);
-                res.send ('Something went wrong...');
+                res.send ('Something went wrong...', error);
             } else {
                 console.log ('Mail sent successfully...');
                 res.send ('Mail sent successfully...');

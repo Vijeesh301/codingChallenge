@@ -42,7 +42,7 @@ app.post ('/emailsent', async (req, res) => {
                 res.send ('Something went wrong...', error);
             } else {
                 console.log ('Mail sent successfully...');
-                res.send ('Mail sent successfully...');
+                res.send (data);
             }
         });
 
